@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2'
+expr:dir='data:blog.languageDirection'
+xmlns='http://www.w3.org/1999/xhtml'
+xmlns:b='http://www.google.com/2005/gml/b'
+xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <meta content='width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no'/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <b:include data='blog' name='all-head-content'/>
+    <title><data:blog.pageTitle/></title>
+    <b:skin><![CDATA[/* ----------------------------------------------- */
+]]></b:skin>
+    <b:template-skin>
+      <b:variable default='960px' name='content.width' type='length' value='930px'/>
+    <![CDATA[
+    .cover-container {
+      width: $(content.width);
+      margin: 0 auto;
+    }
+    ]]>
+    </b:template-skin>
+   </head>
+   <body>
+<!-- Both right and left required or have none??-->
+
+
+<macro:includable id='sections' var='pFooter'>
+    <b:section mexpr:class='data:pFooter.class' mexpr:id='data:pFooter.idPrefix + &quot;-1&quot;' preferred='yes' showaddelement='yes'/>
+</macro:includable>
+
+<footer id='footer'>
+ <macro:include id='footer-sections' name='sections'>
+  <macro:param default='0' name='num' value='1'/>
+  <macro:param default='footer' name='idPrefix'/>
+  <macro:param default='foot' name='class'/>
+  <macro:param default='false' name='includeBottom'/>
+ </macro:include>
+</footer>
+     <!-- Start Site wrappers -->
+     <div class="site-wrapper">
+       <div class="site-wrapper-inner">
+         <div class="cover-container">
+
+           <div id='main'>
+            <b:section id='content'>
+             <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'/>
+            </b:section>
+           </div>
+
+        </div>
+      </div>
+     </div>
+     <b:section-contents id='footer-1'/>
+     <b:section-contents id='footer-2-1'/>
+     <b:section-contents id='footer-2-2'/>
+     <!-- End Site wrappers -->
+     <!-- Latest compiled and minified JavaScript -->
+     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js' />
+     <script src='https://code.jquery.com/jquery-2.1.4.min.js' type='text/javascript' />
+   </body>
+ </html>
